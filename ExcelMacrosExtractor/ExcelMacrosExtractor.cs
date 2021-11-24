@@ -34,20 +34,7 @@ namespace ExcelHelper
             {
                 foreach (var module in package.Workbook.VbaProject.Modules)
                 {
-                    switch (module.Type)
-                    {
-                        case eModuleType.Class:
-                            WriteSourceCodeToFile(module, destinationFolderPath);
-                            break;
-
-                        case eModuleType.Module:
-                            WriteSourceCodeToFile(module, destinationFolderPath);
-                            break;
-
-                        case eModuleType.Document:
-                            WriteSourceCodeToFile(module, destinationFolderPath);
-                            break;
-                    }
+                    WriteSourceCodeToFile(module, destinationFolderPath);
                 }
             }
             catch (NullReferenceException)
